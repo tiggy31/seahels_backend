@@ -1,4 +1,9 @@
+require "google/cloud/vision"
+
+
+
 class PaintingsController < ApplicationController
+   
     def index
         @paintings = Painting.all
         render json: @paintings

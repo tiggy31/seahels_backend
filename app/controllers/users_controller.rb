@@ -10,7 +10,9 @@ class UsersController < ApplicationController
         @current_user = User.find(params[:id])
         
         # @currentuser = @currentuser.artists.find(params[:id])
-        render json: {user: {user_id: @current_user.id}, artists: @current_user.artists}
+        render json: @current_user.artists
     end
 
+
+    
 end
