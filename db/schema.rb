@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_24_134447) do
+ActiveRecord::Schema.define(version: 2020_10_14_144012) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,14 @@ ActiveRecord::Schema.define(version: 2020_09_24_134447) do
     t.index ["user_id"], name: "index_follows_on_user_id"
   end
 
+  create_table "labels", force: :cascade do |t|
+    t.string "description"
+    t.bigint "painting_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["painting_id"], name: "index_labels_on_painting_id"
+  end
+
   create_table "paintings", force: :cascade do |t|
     t.string "name"
     t.string "date"
@@ -67,5 +75,6 @@ ActiveRecord::Schema.define(version: 2020_09_24_134447) do
   add_foreign_key "exhibitions", "paintings"
   add_foreign_key "follows", "artists"
   add_foreign_key "follows", "users"
+  add_foreign_key "labels", "paintings"
   add_foreign_key "paintings", "artists"
 end

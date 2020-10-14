@@ -21,6 +21,9 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'google-cloud'
 gem 'fog-aws'
+gem 'rmagick'
+gem 'google-cloud-vision'
+gem 'figaro'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

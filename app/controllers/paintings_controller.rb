@@ -13,4 +13,5 @@ class PaintingsController < ApplicationController
         @painting = Painting.find(params[:id])
         render json: @painting
     end
+
 end

@@ -1,3 +1,5 @@
+
+
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
@@ -6,13 +8,14 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 #user
+
+
+
 Follow.destroy_all
 Exhibition.destroy_all
 User.destroy_all
 Painting.destroy_all
 Artist.destroy_all
-
-
 
 
 
@@ -107,5 +110,11 @@ follow_2 = Follow.create(user:tiggy, artist:adi)
 # t.string :date
 
 tsedal = Exhibition.create(artist: selome, painting: tsedal, location: "Addis Abeba", date: "14 Sep -21 Nov 2020")
+
+image_annotator = Google::Cloud::Vision.image_annotator
+
+
+# Performs label detection on the image file
+
 
 puts "seed finish"
